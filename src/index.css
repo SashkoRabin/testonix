@@ -1,16 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .App {
   width: 95%;
   margin: 0 auto;
+}
+
+.navbar__linkItem {
+  text-decoration: none;
+  margin: 0 15px;
+  color: teal;
+  font-size: 18px;
+  transition: 0.5s;
+  text-transform: uppercase;
+}
+.navbar__linkItem:hover {
+  color: black;
+}
+.header {
+  display: flex;
+  margin: 10px auto;
+}
+.projectName {
+  margin-left: 20%;
+  font-weight: 700;
+  font-size: 18px;
+}
+.information {
+  text-align: center;
+  align-items: center;
+  margin: 10px auto;
 }
 .wrapper {
   margin: 10px auto;
@@ -19,16 +46,7 @@
   text-align: center;
   align-items: center;
 }
-.information {
-  text-align: center;
-  align-items: center;
-  margin: 10px auto;
-}
-.header {
-  text-align: center;
-  margin: 10px auto;
-  align-items: center;
-}
+
 .footer {
   display: flex;
   flex-direction: column;

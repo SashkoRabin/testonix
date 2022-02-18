@@ -1,15 +1,12 @@
-import Header from './components/Header/Header';
-import Information from './components/Information/Information';
-import Wrapper from './components/Wrapper/Wrapper';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter } from 'react-router-dom';
+import SiteRouter from './components/SiteRouter/SiteRouter';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Information />
-      <Wrapper />
-      <Footer />
+      <BrowserRouter>
+        <SiteRouter />
+      </BrowserRouter>
     </div>
   );
 }
