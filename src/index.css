@@ -30,15 +30,34 @@
   margin: 10px auto;
 }
 .projectName {
-  margin-left: 20%;
+  margin-left: 16%;
   font-weight: 700;
   font-size: 18px;
+  color: darkgreen;
 }
 .information {
   text-align: center;
   align-items: center;
-  margin: 10px auto;
+  margin: 20px auto;
+  height: 400px;
+  position: relative;
 }
+.information__bg {
+  background-image: url('https://i.imgur.com/dcXDuF2.jpg');
+  filter: blur(4px);
+  height: 100%;
+  box-shadow: 0.5px 2.7px 7.1px rgba(0, 0, 0, 0.061),
+    1.6px 9.2px 23.9px rgba(0, 0, 0, 0.089), 7px 41px 107px rgba(0, 0, 0, 0.15);
+}
+.information__text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: lightgreen;
+  text-shadow: 3px 2px 9px rgba(181, 192, 206, 0.5);
+  font-size: 17px;
+}
+
 .wrapper {
   margin: 10px auto;
   width: 100%;
@@ -59,9 +78,9 @@
 }
 .footer span {
   margin: 5px 20px;
-  color: teal;
+  color: darkgreen;
 }
 .footer a {
   text-decoration: none;
-  color: teal;
+  color: darkgreen;
 }
