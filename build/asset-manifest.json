@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/testonix/static/css/main.e6c13ad2.css",
+    "main.js": "/testonix/static/js/main.a70e07d5.js",
+    "index.html": "/testonix/index.html",
+    "main.e6c13ad2.css.map": "/testonix/static/css/main.e6c13ad2.css.map",
+    "main.a70e07d5.js.map": "/testonix/static/js/main.a70e07d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.a70e07d5.js"
+  ]
+}
