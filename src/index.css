@@ -59,11 +59,12 @@
 }
 
 .wrapper {
-  margin: 10px auto;
+  margin: 20px auto;
   width: 100%;
   min-height: 300px;
   text-align: center;
   align-items: center;
+  color: darkgreen;
 }
 
 .footer {
@@ -71,6 +72,7 @@
   flex-direction: column;
   margin: 5px;
   align-items: flex-end;
+  background: linear-gradient(to left, white, lightgreen);
 }
 .footer__author_name {
   padding-bottom: 2px;
