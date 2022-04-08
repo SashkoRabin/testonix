@@ -14,7 +14,11 @@ const Footer = () => {
         </a>
       </span>
       <span className="footer__design_link">
-        <a target="_blank" rel="noreferrer" href="https://blindbarber.com/">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://nicepage.com/ru/st/19813/vkusnaya-i-svezhaya-eda-shablon-sayta"
+        >
           Original design...
         </a>
       </span>

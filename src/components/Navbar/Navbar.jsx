@@ -1,21 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import cl from './Navbar.module.css';
 
 const Navbar = () => {
   return (
-    <div className="navbar">
-      <Link className="navbar__linkItem" to="*">
+    <div className={cl.navbar}>
+      <Link className={cl.navbar__linkItem} to="*">
         Main
       </Link>
       <a
-        className="navbar__linkItem"
+        className={cl.navbar__linkItem}
         target="_blank"
         rel="noreferrer"
         href="https://github.com/SashkoRabin"
       >
         GitHub
       </a>
-      <Link className="navbar__linkItem" to="*">
+      <Link className={cl.navbar__linkItem} to="*">
         Something useful
       </Link>
     </div>

@@ -1,0 +1,369 @@
+.cake {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/a51310af9ef55a33b730f558/pexelsphoto213621.png);
+  height: 700px;
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.cake_info {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+}
+
+.cake_text {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.cake_text h1,
+.cake_text h4 {
+  margin: 20px 0;
+}
+
+.cake_text > h4 {
+  letter-spacing: 10px;
+  font-size: 1.5rem;
+}
+.cake_line {
+  border-style: dotted;
+  width: 40%;
+  margin: 0 auto;
+  height: 3px;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+}
+
+.bakery {
+  background: #dfcbab;
+}
+.bakery_content {
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.bakery_text {
+  margin: 30px 15%;
+  text-align: center;
+}
+
+.bakery_text > h2 {
+  margin: 40px 0 0;
+  font-weight: 400;
+  font-size: 2.25rem;
+  line-height: 1.1;
+}
+.bakery_text > p {
+  margin: 20px 0 0;
+}
+
+.bakery_line {
+  border-style: dotted;
+  width: 15%;
+  margin: 0 auto;
+  height: 3px;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  border-color: #877e73;
+}
+
+.about_bakery {
+  margin: 40px 0 60px;
+  display: flex;
+}
+
+.ab_left {
+  background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/fa3fa2b7085552afb8aa51f3/pexelsphoto291528.jpg);
+  height: 650px;
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 35%;
+}
+
+.ab_right {
+  width: 70%;
+}
+
+.ab_right p {
+  word-wrap: break-word;
+  position: relative;
+  margin: 10% 0% 10% 15%;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.ab_right_img {
+  background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/975df626266855078c4e6e5c/pexelsphoto839220.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 335px;
+  margin: 30px 0 0 15%;
+}
+
+.menu {
+  background: white;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 60px;
+}
+
+.menu_coffee {
+  background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/46a05fd7b340597fb9e2f15e/pexelsphoto982612.jpg);
+  height: 650px;
+  background-size: cover;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  width: 33.33333%;
+}
+.menu_text {
+  width: 33.33333%;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.menu_text > h2 {
+  margin-top: 170px;
+}
+
+.menu_date {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.125rem;
+  margin: 20px 0 0;
+  color: #999999;
+}
+
+.menu_dish {
+  margin: 20px 0 0;
+  text-align: center;
+  word-wrap: break-word;
+  position: relative;
+}
+.menu_line {
+  color: #999999;
+  height: 3px;
+  border-style: dotted;
+  margin: 34px auto 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  width: 25%;
+}
+.menu_view {
+  display: table;
+  margin: 40px auto;
+  color: #111;
+  background: #dfcbab;
+  border-width: 0;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0 none transparent;
+  user-select: none;
+  padding: 10px 30px;
+  border-radius: 0;
+}
+
+.menu_view:hover {
+  background: #d4b98e;
+}
+
+.menu_food {
+  background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/0634077a1eab517c91b085db/pexelsphoto566566.jpg);
+  height: 650px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 33.33333%;
+}
+
+.shop {
+  background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/f949780cc0fa5f6e951a4cdc/pexelsphoto324028.jpg);
+  height: 680px;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  filter: brightness(0.9);
+}
+
+.shop_text {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15% 30% 0 0;
+  color: rgb(255, 255, 255);
+  line-height: 1.6;
+}
+
+.shop_text h2 {
+  margin: 20px 0;
+  font-size: 3rem;
+}
+.shop_text p {
+  margin: 15px 0 35px;
+}
+
+.shop_view {
+  display: table;
+  margin: 40px 0;
+  color: #111;
+  background: #dfcbab;
+  border-width: 0;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0 none transparent;
+  user-select: none;
+  padding: 10px 30px;
+  border-radius: 0;
+}
+
+.shop_view:hover {
+  background: #d4b98e;
+}
+
+.info {
+  background: #dfcbab;
+  line-height: 1.6;
+}
+.info img {
+  display: block;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.info p {
+  margin: 15px 20px;
+}
+
+.info_wrapper {
+  width: 85%;
+  margin: 60px auto 0;
+  padding: 60px 0;
+  display: flex;
+}
+
+.info_left {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.info_left img {
+  width: 60%;
+  margin: 15px auto;
+
+  height: 400px;
+}
+.info_right {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.info_right img {
+  width: 100%;
+  height: 340px;
+  margin-top: 10px;
+}
+
+.info_line {
+  color: #877e73;
+  height: 3px;
+  border-style: dotted;
+  margin: 25px 20px;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  width: 25%;
+}
+
+.contacts {
+  display: flex;
+  line-height: 1.6;
+}
+
+.contacts h2 {
+  margin: 70px 0 0;
+}
+
+.contacts_img1,
+.contacts_img2 {
+  flex: 0 0 33.33333333%;
+  width: 33.33333333%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.contacts_img1 {
+  height: 680px;
+  background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/89a1871b2f3f586e8cbf7d5e/chocolatedessertbrowniescake.jpg);
+}
+
+.contacts_text {
+  flex: 0 0 33.33333333%;
+  width: 33.33333333%;
+  text-align: center;
+}
+
+.contacts_img2 {
+  height: 680px;
+  background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/c8b7bf378b1b5595b9013a1b/pexelsphoto973238.jpg);
+}
+
+.contacts_line {
+  color: #999999;
+  height: 3px;
+  border-style: dotted;
+  margin: 25px auto;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  width: 25%;
+}
+
+.contacts_contact {
+  display: table;
+  margin: 40px auto;
+  color: #111;
+  background: #dfcbab;
+  border-width: 0;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0 none transparent;
+  user-select: none;
+  padding: 10px 30px;
+  border-radius: 0;
+}
+
+.contacts_contact:hover {
+  background: #d4b98e;
+}
+
+.contacts_me {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.125rem;
+  margin: 20px 0 0;
+  color: #999999;
+}
+
+.contacts_timetable {
+  margin: 20px 0 0;
+}
