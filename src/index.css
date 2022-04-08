@@ -26,3 +26,27 @@
 .footer a:hover {
   color: #797676;
 }
+
+@media (max-width: 800px) {
+  .footer {
+    display: flex;
+    padding: 20px 0;
+    align-items: flex-end;
+    background: #333333;
+    font-size: 0.9rem;
+  }
+
+  .footer span {
+    margin: 0 10px;
+    color: #e8c1b5;
+  }
+  .footer a {
+    text-decoration: none;
+    color: #e8c1b5;
+    cursor: pointer;
+  }
+
+  .footer a:hover {
+    color: #797676;
+  }
+}
