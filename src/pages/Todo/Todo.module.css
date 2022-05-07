@@ -1,0 +1,68 @@
+.todo__body {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.todo__formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo__form {
+  display: inline-block;
+  margin: 20px 0;
+  border: 1px solid teal;
+  border-radius: 5px;
+  padding: 30px;
+}
+.todo__form input[type='text'] {
+  padding: 5px 3px;
+  margin: 5px;
+}
+
+.todo__form button {
+  padding: 7px;
+  margin: 10px 20% 0;
+}
+
+.todo__item {
+  border: 1px solid teal;
+  display: flex;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.todo__item p {
+  margin: 0 10px;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+}
+
+.todo__deleteButton {
+  margin: 0 30px;
+  padding: 0 5px;
+  background: red;
+  outline: none;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.todo__deleteButton:hover {
+  background: rgb(243, 137, 137);
+}
+
+.todo__nothing {
+  text-align: center;
+}
+.todo__sortSelect {
+  margin: 0 10px;
+  padding: 3px;
+}
+
+.todo__editButton {
+  padding: 0 5px;
+  cursor: pointer;
+}

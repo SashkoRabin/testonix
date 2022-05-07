@@ -5,7 +5,7 @@ import cl from './Navbar.module.css';
 const Navbar = () => {
   return (
     <div className={cl.navbar}>
-      <Link className={cl.navbar__linkItem} to="*">
+      <Link className={cl.navbar__linkItem} to="/">
         Main
       </Link>
       <a
@@ -16,8 +16,8 @@ const Navbar = () => {
       >
         GitHub
       </a>
-      <Link className={cl.navbar__linkItem} to="*">
-        Something useful
+      <Link className={cl.navbar__linkItem} to="/todo">
+        Todo
       </Link>
     </div>
   );

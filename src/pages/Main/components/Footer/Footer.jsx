@@ -4,14 +4,13 @@ class Footer extends React.Component {
   constructor() {
     super();
     this.state = { isOriginalDesignLooked: false };
-    this.originalDesignLooked = this.originalDesignLooked.bind(this);
   }
 
-  originalDesignLooked() {
+  originalDesignLooked = () => {
     this.setState({
       isOriginalDesignLooked: true,
     });
-  }
+  };
 
   render() {
     return (
