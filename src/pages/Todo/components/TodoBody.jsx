@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TodoItem from './TodoItem';
 import cl from '../Todo.module.css';
 import SettingBar from './SettingBar';
+import Input from './Input';
 
 export default function TodoBody() {
   const [titleValue, setTitleValue] = useState('');
@@ -158,36 +159,25 @@ export default function TodoBody() {
     <div className={cl.todo__body}>
       <div className={cl.todo__formWrapper}>
         <div className={cl.todo__form}>
-          <label htmlFor="todo__title">Enter Todo Title:</label>
-          <input
-            type="text"
-            id="todo__title"
-            placeholder="Enter todo title"
+          <Input
             value={titleValue}
-            onChange={(e) => setTitleValue(e.target.value)}
-            required
+            inputId="todo__title"
+            setValue={setTitleValue}
+            text={'Enter Todo Title'}
           />
-          <br />
-          <label htmlFor="todo__userName">Enter your name:</label>
-          <input
-            type="text"
-            id="todo__userName"
-            placeholder="Enter your name"
+          <Input
             value={nameValue}
-            onChange={(e) => setNameValue(e.target.value)}
-            required
+            inputId="todo__name"
+            setValue={setNameValue}
+            text={'Enter your name'}
           />
-          <br />
-          <label htmlFor="todo__userSurname">Enter your surname:</label>
-          <input
+          <Input
             value={surnameValue}
-            onChange={(e) => setSurnameValue(e.target.value)}
-            type="text"
-            id="todo__userSurname"
-            placeholder="Enter your surname"
-            required
+            inputId="todo__surname"
+            setValue={setSurnameValue}
+            text={'Enter your surname'}
           />
-          <br />
+
           <button onClick={newTodo}>Create new todo</button>
           <button disabled={isDisabled} onClick={() => submitEditTodoById()}>
             Save
