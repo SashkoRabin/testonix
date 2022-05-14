@@ -5,6 +5,7 @@ import Contacts from './components/Contacts';
 import Info from './components/Info';
 import Menu from './components/Menu';
 import Shop from './components/Shop';
+import PropTypes from 'prop-types';
 
 export default function WrapperView({ day, prefix, month, year }) {
   return (
@@ -18,3 +19,10 @@ export default function WrapperView({ day, prefix, month, year }) {
     </div>
   );
 }
+
+WrapperView.propTypes = {
+  day: PropTypes.number,
+  year: PropTypes.number,
+  prefix: PropTypes.string,
+  month: PropTypes.string,
+};

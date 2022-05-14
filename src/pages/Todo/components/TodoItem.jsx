@@ -1,5 +1,6 @@
 import React from 'react';
 import cl from '../Todo.module.css';
+import PropTypes from 'prop-types';
 
 export default function TodoItem({
   todo,
@@ -41,3 +42,10 @@ export default function TodoItem({
     </div>
   );
 }
+
+TodoItem.propTypes = {
+  todo: PropTypes.object,
+  setTodoCompleted: PropTypes.func,
+  deleteTodoById: PropTypes.func,
+  editTodoById: PropTypes.func,
+};

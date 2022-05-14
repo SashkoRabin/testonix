@@ -1,5 +1,6 @@
 import React from 'react';
 import cl from '../Todo.module.css';
+import PropTypes from 'prop-types';
 
 export default function Input({ value, setValue, inputId, text }) {
   return (
@@ -19,3 +20,10 @@ export default function Input({ value, setValue, inputId, text }) {
     </div>
   );
 }
+
+Input.propTypes = {
+  value: PropTypes.string,
+  inputId: PropTypes.string,
+  text: PropTypes.string,
+  setValue: PropTypes.func,
+};

@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import cl from '../Todo.module.css';
+import PropTypes from 'prop-types';
 
 export default function SettingBar({ setSortIndex }) {
   const selectSort = useRef('');
@@ -31,3 +32,7 @@ export default function SettingBar({ setSortIndex }) {
     </div>
   );
 }
+
+SettingBar.propTypes = {
+  setSortIndex: PropTypes.func,
+};

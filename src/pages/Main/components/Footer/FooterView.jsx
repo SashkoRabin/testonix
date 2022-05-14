@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class FooterView extends Component {
   render() {
@@ -31,3 +32,8 @@ export default class FooterView extends Component {
     );
   }
 }
+
+FooterView.propTypes = {
+  isOriginalDesignLooked: PropTypes.bool,
+  originalDesignLooked: PropTypes.func,
+};

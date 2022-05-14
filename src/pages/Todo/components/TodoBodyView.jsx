@@ -3,6 +3,7 @@ import cl from '../Todo.module.css';
 import SettingBar from './SettingBar';
 import Input from './Input';
 import TodoItem from './TodoItem';
+import PropTypes from 'prop-types';
 
 export default function TodoBodyView(props) {
   return (
@@ -54,3 +55,20 @@ export default function TodoBodyView(props) {
     </div>
   );
 }
+
+TodoBodyView.propTypes = {
+  isDisabled: PropTypes.bool,
+  titleValue: PropTypes.string,
+  nameValue: PropTypes.string,
+  surnameValue: PropTypes.string,
+  todos: PropTypes.array,
+  setTitleValue: PropTypes.func,
+  setNameValue: PropTypes.func,
+  setSurnameValue: PropTypes.func,
+  newTodo: PropTypes.func,
+  submitEditTodoById: PropTypes.func,
+  setSortIndex: PropTypes.func,
+  setTodoCompleted: PropTypes.func,
+  deleteTodoById: PropTypes.func,
+  editTodoById: PropTypes.func,
+};

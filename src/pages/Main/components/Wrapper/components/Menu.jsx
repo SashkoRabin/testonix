@@ -1,5 +1,6 @@
 import React from 'react';
 import cl from '../Wrapper.module.css';
+import PropTypes from 'prop-types';
 
 export default function Menu({ day, prefix, month, year }) {
   return (
@@ -25,3 +26,10 @@ export default function Menu({ day, prefix, month, year }) {
     </div>
   );
 }
+
+Menu.propTypes = {
+  day: PropTypes.number,
+  year: PropTypes.number,
+  prefix: PropTypes.string,
+  month: PropTypes.string,
+};
