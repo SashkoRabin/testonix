@@ -1,4 +1,5 @@
 import React from 'react';
+import FooterView from './FooterView';
 
 class Footer extends React.Component {
   constructor() {
@@ -14,31 +15,10 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <footer className="footer">
-        <span className="footer__author_name">Меркулов Саша</span>
-        <span className="footer__author_github">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://github.com/SashkoRabin"
-          >
-            GitHub
-          </a>
-        </span>
-        <span
-          onClick={this.originalDesignLooked}
-          className="footer__design_link"
-        >
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://nicepage.com/ru/st/19813/vkusnaya-i-svezhaya-eda-shablon-sayta"
-          >
-            Original design...
-          </a>
-        </span>
-        {this.state.isOriginalDesignLooked && <span>Спасибо!!!</span>}
-      </footer>
+      <FooterView
+        isOriginalDesignLooked={this.state.isOriginalDesignLooked}
+        originalDesignLooked={this.originalDesignLooked}
+      />
     );
   }
 }

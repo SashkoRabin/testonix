@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import TodoItem from './TodoItem';
-import cl from '../Todo.module.css';
-import SettingBar from './SettingBar';
-import Input from './Input';
+import TodoBodyView from './TodoBodyView';
 
 export default function TodoBody() {
   const [titleValue, setTitleValue] = useState('');
@@ -156,49 +153,22 @@ export default function TodoBody() {
     setIsDisabled((prev) => (prev = true));
   };
   return (
-    <div className={cl.todo__body}>
-      <div className={cl.todo__formWrapper}>
-        <div className={cl.todo__form}>
-          <Input
-            value={titleValue}
-            inputId="todo__title"
-            setValue={setTitleValue}
-            text={'Enter Todo Title'}
-          />
-          <Input
-            value={nameValue}
-            inputId="todo__name"
-            setValue={setNameValue}
-            text={'Enter your name'}
-          />
-          <Input
-            value={surnameValue}
-            inputId="todo__surname"
-            setValue={setSurnameValue}
-            text={'Enter your surname'}
-          />
-
-          <button onClick={newTodo}>Create new todo</button>
-          <button disabled={isDisabled} onClick={() => submitEditTodoById()}>
-            Save
-          </button>
-        </div>
-      </div>
-      <SettingBar setSortIndex={setSortIndex} />
-      {todos.length ? (
-        todos.map((item) => (
-          <TodoItem
-            key={item.id}
-            todo={item}
-            setTodoCompleted={setTodoCompleted}
-            deleteTodoById={deleteTodoById}
-            editTodoById={editTodoById}
-          />
-        ))
-      ) : (
-        <h3 className={cl.todo__nothing}>Список дел пуст...</h3>
-      )}
-    </div>
+    <TodoBodyView
+      titleValue={titleValue}
+      setTitleValue={setTitleValue}
+      nameValue={nameValue}
+      setNameValue={setNameValue}
+      surnameValue={surnameValue}
+      setSurnameValue={setSurnameValue}
+      newTodo={newTodo}
+      isDisabled={isDisabled}
+      submitEditTodoById={submitEditTodoById}
+      setSortIndex={setSortIndex}
+      todos={todos}
+      setTodoCompleted={setTodoCompleted}
+      deleteTodoById={deleteTodoById}
+      editTodoById={editTodoById}
+    />
   );
 }
 
