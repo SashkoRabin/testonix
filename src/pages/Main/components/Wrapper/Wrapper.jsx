@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import WrapperView from './WrapperView';
 
-const Wrapper = () => {
-  const date = new Date();
-  const day = date.getDate();
-  const year = date.getFullYear();
-  let prefix = 'th';
-  const month = date.toLocaleString('en', { month: 'short' });
-  if (day === 1) prefix = 'st';
-  if (day === 2) prefix = 'nd';
-  if (day === 3) prefix = 'rd';
+class Wrapper extends Component {
+  date = new Date();
+  day = this.date.getDate();
+  year = this.date.getFullYear();
+  month = this.date.toLocaleString('en', { month: 'short' });
 
-  return <WrapperView day={day} prefix={prefix} month={month} year={year} />;
-};
+  getPrefix = (day) => {
+    let pref = 'th';
+    if (day === 1) pref = 'st';
+    if (day === 2) pref = 'nd';
+    if (day === 3) pref = 'rd';
+    return pref;
+  };
+
+  prefix = this.getPrefix(this.day);
+
+  render() {
+    return (
+      <WrapperView
+        day={this.day}
+        prefix={this.prefix}
+        month={this.month}
+        year={this.year}
+      />
+    );
+  }
+}
 
 export default Wrapper;

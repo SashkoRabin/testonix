@@ -9,7 +9,7 @@ export default function Menu({ day, prefix, month, year }) {
       <div className={cl.menu_text}>
         <h2>Today`s Menu</h2>
         <p className={cl.menu_date}>
-          {day + prefix + ' ' + month + ' ' + year}
+          {day + '' + prefix + ' ' + month + ' ' + year}
         </p>
         <p className={cl.menu_dish}>
           Delight in three layers of cake paired with two generous layers of
