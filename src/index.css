@@ -13,6 +13,13 @@
   background: #333333;
 }
 
+.timer {
+  margin: 10px 0;
+  text-align: center;
+  border-top: 1px solid black;
+  padding: 10px;
+}
+
 .footer span {
   margin: 5px 20px;
   color: #e8c1b5;
