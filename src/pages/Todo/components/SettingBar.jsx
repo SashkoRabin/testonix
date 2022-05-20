@@ -1,26 +1,26 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import cl from '../Todo.module.css';
 import PropTypes from 'prop-types';
 
 export default function SettingBar({ setSortIndex }) {
-  const selectSort = useRef('');
+  const [sortValue, setSortValue] = useState(3);
 
-  const sel = () => {
-    setSortIndex(
-      (prev) =>
-        (prev =
-          +selectSort.current.options[selectSort.current.selectedIndex].value)
-    );
+  useEffect(() => {
+    setSortIndex((prev) => (prev = sortValue));
+  }, [sortValue, setSortIndex]);
+
+  const changeSortIndex = (e) => {
+    setSortValue((prev) => (prev = +e.target.value));
   };
   return (
     <div>
       <label htmlFor="sortSelect">Сортировка</label>
       <select
-        ref={selectSort}
+        value={sortValue}
         className={cl.todo__sortSelect}
         name=""
         id="sortSelect"
-        onChange={sel}
+        onChange={changeSortIndex}
       >
         <option value="default" disabled>
           Выберите параметр сортировки

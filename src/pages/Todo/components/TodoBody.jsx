@@ -93,13 +93,11 @@ export default function TodoBody() {
       if (sortIndex === 2) {
         setTodos((prev) =>
           [...prev].sort((a, b) => {
-            if (a.title.toLowerCase() < b.title.toLowerCase()) {
-              return -1;
-            }
-            if (a.title.toLowerCase() > b.title.toLowerCase()) {
-              return 1;
-            }
-            return 0;
+            return a.title.toLowerCase() < b.title.toLowerCase()
+              ? -1
+              : a.title.toLowerCase() > b.title.toLowerCase()
+              ? 1
+              : 0;
           })
         );
       }
