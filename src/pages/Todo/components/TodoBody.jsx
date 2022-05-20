@@ -70,7 +70,7 @@ export default function TodoBody() {
   const deleteTodoById = (id) => {
     //удаление из массива
     if (id) {
-      setTodos((prev) => [...prev].filter((item) => item.id !== id));
+      setTodos((prev) => prev.filter((item) => item.id !== id));
     }
   };
 
