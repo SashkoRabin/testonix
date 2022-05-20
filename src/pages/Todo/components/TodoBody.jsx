@@ -58,10 +58,10 @@ export default function TodoBody() {
   };
   const setTodoCompleted = (id) => {
     if (id) {
-      const my = todos.filter((item) => item.id === id)[0];
+      const index = todos.findIndex((item) => item.id === id);
       setTodos((prev) => {
         const arr = [...prev];
-        arr[my.id - 1].completed = !arr[my.id - 1].completed;
+        arr[index].completed = !arr[index].completed;
         return arr;
       });
     }
