@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 
 export default function Input({ value, setValue, inputId, text }) {
   return (
-    <div className={cl.input_container}>
-      <label className={cl.label} htmlFor={inputId}>
-        {text}
-      </label>
+    <div>
+      <label htmlFor={inputId}>{text}</label>
       <input
         type="text"
         className={cl.text_input}
