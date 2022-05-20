@@ -139,7 +139,7 @@ export default function TodoBody() {
   const submitEditTodoById = () => {
     setTodos((prev) => {
       const ind = currentTodo.id - 1;
-      const arr = [...prev];
+      const arr = prev.map((item) => ({ ...item }));
       arr[ind].title = titleValue;
       arr[ind].user.name = nameValue;
       arr[ind].user.surname = surnameValue;
@@ -149,6 +149,7 @@ export default function TodoBody() {
     setSurnameValue('');
     setTitleValue('');
     setIsDisabled((prev) => (prev = true));
+    console.log(todos);
   };
   return (
     <TodoBodyView
