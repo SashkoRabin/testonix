@@ -15,21 +15,37 @@ export default function TodoBody() {
       title: 'Bread',
       user: { name: 'Alex', surname: 'Merkulov' },
       completed: false,
+      hotkey: '1',
     },
     {
       id: 2,
       title: 'Milk',
       user: { name: 'Ivan', surname: 'Ivanov' },
       completed: false,
+      active: false,
+      hotkey: '2',
     },
     {
       id: 3,
       title: 'Butter',
       user: { name: 'Vladilen', surname: 'Minin' },
       completed: false,
+      active: false,
+      hotkey: '3',
     },
   ]);
+  const keypressHanlder = (e) => {
+    if (e.path.join('').search('HTMLInputElement') < 0) {
+      todos.forEach((item) => item.hotkey === e.key && setActiveTodo(item.id));
+    }
+  };
 
+  useEffect(() => {
+    document.addEventListener('keypress', keypressHanlder);
+    return () => {
+      document.removeEventListener('keypress', keypressHanlder);
+    };
+  });
   useEffect(() => {
     sortingFunc(sortIndex);
   }, [sortIndex]);
@@ -117,9 +133,18 @@ export default function TodoBody() {
     }
   };
 
+  const setActiveTodo = (id) => {
+    setTodos((prev) => {
+      const arr = [...prev];
+      arr[arr.findIndex((item) => item.id === id)].active =
+        !arr[arr.findIndex((item) => item.id === id)].active;
+      return arr;
+    });
+  };
+
   const editTodoById = (id) => {
     if (id) {
-      const my = todos.filter((item) => item.id === id)[0];
+      const my = todos.find((item) => item.id === id);
       const arr = [...todos];
       setNameValue(arr[my.id - 1].user.name);
       setSurnameValue(arr[my.id - 1].user.surname);
@@ -149,7 +174,6 @@ export default function TodoBody() {
     setSurnameValue('');
     setTitleValue('');
     setIsDisabled((prev) => (prev = true));
-    console.log(todos);
   };
   return (
     <TodoBodyView
@@ -167,6 +191,7 @@ export default function TodoBody() {
       setTodoCompleted={setTodoCompleted}
       deleteTodoById={deleteTodoById}
       editTodoById={editTodoById}
+      setActiveTodo={setActiveTodo}
     />
   );
 }

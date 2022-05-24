@@ -47,6 +47,7 @@ export default function TodoBodyView(props) {
             setTodoCompleted={props.setTodoCompleted}
             deleteTodoById={props.deleteTodoById}
             editTodoById={props.editTodoById}
+            setActiveTodo={props.setActiveTodo}
           />
         ))
       ) : (

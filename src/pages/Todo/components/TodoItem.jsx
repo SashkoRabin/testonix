@@ -1,45 +1,33 @@
-import React from 'react';
-import cl from '../Todo.module.css';
+/* eslint-disable eqeqeq */
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import TodoItemView from './TodoItemView';
 
 export default function TodoItem({
   todo,
   setTodoCompleted,
   deleteTodoById,
   editTodoById,
+  setActiveTodo,
 }) {
+  const [wrapperClassName, setWrapperClassName] = useState('todo__item');
+  const clickHandler = async () => {
+    await setActiveTodo(todo.id);
+  };
+  useEffect(() => {
+    todo.active
+      ? setWrapperClassName('todo__item active')
+      : setWrapperClassName('todo__item');
+  }, [todo.active]);
   return (
-    <div className={cl.todo__item}>
-      <input
-        type="checkbox"
-        name="todoCompleted"
-        id="todoCompleted"
-        value={todo.id}
-        // checked={todo.completed}
-        onChange={(e) => setTodoCompleted(+e.target.value)}
-      />
-      <p>
-        {todo.id}. {todo.title}
-      </p>
-      <br />
-      <h4>
-        {todo.user.name} {todo.user.surname}
-      </h4>
-      <button
-        value={todo.id}
-        onClick={(e) => deleteTodoById(+e.target.value)}
-        className={cl.todo__deleteButton}
-      >
-        x
-      </button>
-      <button
-        value={todo.id}
-        onClick={(e) => editTodoById(+e.target.value)}
-        className={cl.todo__editButton}
-      >
-        Edit
-      </button>
-    </div>
+    <TodoItemView
+      todo={todo}
+      setTodoCompleted={setTodoCompleted}
+      deleteTodoById={deleteTodoById}
+      editTodoById={editTodoById}
+      wrapperClassName={wrapperClassName}
+      clickHandler={clickHandler}
+    />
   );
 }
 

@@ -33,6 +33,25 @@
 .footer a:hover {
   color: #797676;
 }
+.todo__item {
+  border: 1px solid teal;
+  position: relative;
+  display: flex;
+  padding: 10px;
+  margin: 10px 0;
+  transition: 0.2s;
+}
+.todo__item p {
+  margin: 0 10px;
+}
+
+.todo__item.active {
+  border: 2px solid red;
+  display: flex;
+  padding: 10px;
+  margin: 10px 0;
+  transition: 0.2s;
+}
 
 @media (max-width: 800px) {
   .footer {

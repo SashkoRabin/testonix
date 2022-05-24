@@ -26,17 +26,6 @@
   margin: 10px 20px;
 }
 
-.todo__item {
-  border: 1px solid teal;
-  display: flex;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.todo__item p {
-  margin: 0 10px;
-}
-
 input[type='checkbox'] {
   width: 20px;
   height: 20px;
@@ -65,6 +54,14 @@ input[type='checkbox'] {
 .todo__editButton {
   padding: 0 5px;
   cursor: pointer;
+}
+
+.hotkey {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  border: 1px solid teal;
+  padding: 2px 10px;
 }
 
 .text_input {
