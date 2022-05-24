@@ -14,6 +14,20 @@ class Wrapper extends Component {
     if (day === 3) pref = 'rd';
     return pref;
   };
+  componentDidMount = () => {
+    const images = Array.prototype.slice.call(document.images);
+    images.forEach((item) => {
+      item.addEventListener('load', () => console.log('Loaded'));
+      item.addEventListener('error', () => console.log('Error'));
+    });
+  };
+  componentWillUnmount = () => {
+    const images = Array.prototype.slice.call(document.images);
+    images.forEach((item) => {
+      item.removeEventListener('load', () => console.log('Loaded'));
+      item.removeEventListener('error', () => console.log('Error'));
+    });
+  };
 
   prefix = this.getPrefix(this.day);
 
