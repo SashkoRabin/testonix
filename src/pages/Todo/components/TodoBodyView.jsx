@@ -44,10 +44,14 @@ export default function TodoBodyView(props) {
           <TodoItem
             key={item.id}
             todo={item}
+            setTodos={props.setTodos}
             setTodoCompleted={props.setTodoCompleted}
             deleteTodoById={props.deleteTodoById}
             editTodoById={props.editTodoById}
             setActiveTodo={props.setActiveTodo}
+            dragDrop={props.dragDrop}
+            dragStart={props.dragStart}
+            dragOver={props.dragOver}
           />
         ))
       ) : (

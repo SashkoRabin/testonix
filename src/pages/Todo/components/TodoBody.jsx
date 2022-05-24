@@ -5,8 +5,9 @@ export default function TodoBody() {
   const [titleValue, setTitleValue] = useState('');
   const [nameValue, setNameValue] = useState('');
   const [surnameValue, setSurnameValue] = useState('');
-  const [sortIndex, setSortIndex] = useState(3);
+  const [sortIndex, setSortIndex] = useState(1);
   const [currentTodo, setCurrentTodo] = useState();
+  const [dragCurrentTodo, setDragCurrentTodo] = useState(null);
   const [isDisabled, setIsDisabled] = useState(true);
   const [todos, setTodos] = useState([
     // массив из объектов. вложенность есть.
@@ -14,6 +15,7 @@ export default function TodoBody() {
       id: 1,
       title: 'Bread',
       user: { name: 'Alex', surname: 'Merkulov' },
+      active: false,
       completed: false,
       hotkey: '1',
     },
@@ -175,6 +177,27 @@ export default function TodoBody() {
     setTitleValue('');
     setIsDisabled((prev) => (prev = true));
   };
+  const dragStart = (e, dragTodo) => {
+    setDragCurrentTodo((prev) => (prev = dragTodo));
+  };
+
+  const dragOver = (e) => {
+    e.preventDefault();
+  };
+  const dragDrop = (e, dropTodo) => {
+    e.preventDefault();
+    setTodos((prev) => {
+      const arr = [...prev];
+      let temp =
+        arr[arr.findIndex((item) => item.id === dragCurrentTodo.id)].id;
+      arr[arr.findIndex((item) => item.id === dragCurrentTodo.id)].id =
+        dropTodo.id;
+      arr[arr.findIndex((item) => item.id === dropTodo.id)].id = temp;
+
+      return arr;
+    });
+    sortingFunc(sortIndex);
+  };
   return (
     <TodoBodyView
       titleValue={titleValue}
@@ -188,10 +211,14 @@ export default function TodoBody() {
       submitEditTodoById={submitEditTodoById}
       setSortIndex={setSortIndex}
       todos={todos}
+      setTodos={setTodos}
       setTodoCompleted={setTodoCompleted}
       deleteTodoById={deleteTodoById}
       editTodoById={editTodoById}
       setActiveTodo={setActiveTodo}
+      dragDrop={dragDrop}
+      dragStart={dragStart}
+      dragOver={dragOver}
     />
   );
 }

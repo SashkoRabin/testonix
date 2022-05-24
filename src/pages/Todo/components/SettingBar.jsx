@@ -3,7 +3,7 @@ import cl from '../Todo.module.css';
 import PropTypes from 'prop-types';
 
 export default function SettingBar({ setSortIndex }) {
-  const [sortValue, setSortValue] = useState(3);
+  const [sortValue, setSortValue] = useState(1);
 
   useEffect(() => {
     setSortIndex((prev) => (prev = sortValue));

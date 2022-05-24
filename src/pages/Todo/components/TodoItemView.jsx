@@ -1,45 +1,45 @@
 import React from 'react';
 import cl from '../Todo.module.css';
 
-export default function TodoItemView({
-  todo,
-  setTodoCompleted,
-  deleteTodoById,
-  editTodoById,
-  wrapperClassName,
-  clickHandler,
-}) {
+export default function TodoItemView(props) {
   return (
-    <div className={wrapperClassName || 'todo__item'} onClick={clickHandler}>
+    <div
+      className={props.wrapperClassName || 'todo__item'}
+      draggable="true"
+      onDragStart={(e) => props.dragStart(e, props.todo)}
+      onDragOver={props.dragOver}
+      onDrop={(e) => props.dragDrop(e, props.todo)}
+      onClick={props.clickHandler}
+    >
       <input
         type="checkbox"
         name="todoCompleted"
         id="todoCompleted"
-        value={todo.id}
-        onChange={(e) => setTodoCompleted(+e.target.value)}
+        value={props.todo.id}
+        onChange={(e) => props.setTodoCompleted(+e.target.value)}
       />
       <p>
-        {todo.id}. {todo.title}
+        {props.todo.id}. {props.todo.title}
       </p>
       <br />
       <h4>
-        {todo.user.name} {todo.user.surname}
+        {props.todo.user.name} {props.todo.user.surname}
       </h4>
       <button
-        value={todo.id}
-        onClick={(e) => deleteTodoById(+e.target.value)}
+        value={props.todo.id}
+        onClick={(e) => props.deleteTodoById(+e.target.value)}
         className={cl.todo__deleteButton}
       >
         x
       </button>
       <button
-        value={todo.id}
-        onClick={(e) => editTodoById(+e.target.value)}
+        value={props.todo.id}
+        onClick={(e) => props.editTodoById(+e.target.value)}
         className={cl.todo__editButton}
       >
         Edit
       </button>
-      <span className={cl.hotkey}>{todo.hotkey}</span>
+      <span className={cl.hotkey}>{props.todo.hotkey}</span>
     </div>
   );
 }

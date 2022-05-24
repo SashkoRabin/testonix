@@ -3,30 +3,28 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TodoItemView from './TodoItemView';
 
-export default function TodoItem({
-  todo,
-  setTodoCompleted,
-  deleteTodoById,
-  editTodoById,
-  setActiveTodo,
-}) {
+export default function TodoItem(props) {
   const [wrapperClassName, setWrapperClassName] = useState('todo__item');
   const clickHandler = async () => {
-    await setActiveTodo(todo.id);
+    await props.setActiveTodo(props.todo.id);
   };
   useEffect(() => {
-    todo.active
+    props.todo.active
       ? setWrapperClassName('todo__item active')
       : setWrapperClassName('todo__item');
-  }, [todo.active]);
+  }, [props.todo.active]);
+
   return (
     <TodoItemView
-      todo={todo}
-      setTodoCompleted={setTodoCompleted}
-      deleteTodoById={deleteTodoById}
-      editTodoById={editTodoById}
+      todo={props.todo}
+      setTodoCompleted={props.setTodoCompleted}
+      deleteTodoById={props.deleteTodoById}
+      editTodoById={props.editTodoById}
       wrapperClassName={wrapperClassName}
       clickHandler={clickHandler}
+      dragDrop={props.dragDrop}
+      dragOver={props.dragOver}
+      dragStart={props.dragStart}
     />
   );
 }
