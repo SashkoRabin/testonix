@@ -5,7 +5,7 @@ export default function TodoBody() {
   const [titleValue, setTitleValue] = useState('');
   const [nameValue, setNameValue] = useState('');
   const [surnameValue, setSurnameValue] = useState('');
-  const [sortIndex, setSortIndex] = useState(1);
+  const [sortIndex, setSortIndex] = useState(4);
   const [currentTodo, setCurrentTodo] = useState();
   const [dragCurrentTodo, setDragCurrentTodo] = useState(null);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -18,6 +18,7 @@ export default function TodoBody() {
       active: false,
       completed: false,
       hotkey: '1',
+      order: '1',
     },
     {
       id: 2,
@@ -26,6 +27,7 @@ export default function TodoBody() {
       completed: false,
       active: false,
       hotkey: '2',
+      order: '2',
     },
     {
       id: 3,
@@ -34,6 +36,7 @@ export default function TodoBody() {
       completed: false,
       active: false,
       hotkey: '3',
+      order: '3',
     },
   ]);
   const keypressHanlder = (e) => {
@@ -132,6 +135,15 @@ export default function TodoBody() {
           })
         );
       }
+      if (sortIndex === 4) {
+        setTodos((prev) =>
+          [...prev].sort((a, b) => {
+            if (a.order > b.order) return 1;
+            if (a.order < b.order) return -1;
+            return 0;
+          })
+        );
+      }
     }
   };
 
@@ -187,16 +199,17 @@ export default function TodoBody() {
   const dragDrop = (e, dropTodo) => {
     e.preventDefault();
     setTodos((prev) => {
-      const arr = [...prev];
-      let temp =
-        arr[arr.findIndex((item) => item.id === dragCurrentTodo.id)].id;
-      arr[arr.findIndex((item) => item.id === dragCurrentTodo.id)].id =
-        dropTodo.id;
-      arr[arr.findIndex((item) => item.id === dropTodo.id)].id = temp;
-
-      return arr;
+      return prev.map((i) => {
+        if (i.id === dropTodo.id) {
+          return { ...i, order: dragCurrentTodo.order };
+        }
+        if (i.id === dragCurrentTodo.id) {
+          return { ...i, order: dropTodo.order };
+        }
+        return i;
+      });
     });
-    sortingFunc(sortIndex);
+    sortingFunc(4);
   };
   return (
     <TodoBodyView
