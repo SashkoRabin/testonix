@@ -80,11 +80,11 @@ export default function TodoBody() {
   const setTodoCompleted = (id) => {
     if (id) {
       const index = todos.findIndex((item) => item.id === id);
-      setTodos((prev) => {
-        const arr = [...prev];
-        arr[index].completed = !arr[index].completed;
-        return arr;
-      });
+      setTodos((prev) =>
+        prev.map((item, i) =>
+          i === index ? { ...item, completed: !item.completed } : item
+        )
+      );
     }
   };
 
@@ -148,12 +148,14 @@ export default function TodoBody() {
   };
 
   const setActiveTodo = (id) => {
-    setTodos((prev) => {
-      const arr = [...prev];
-      arr[arr.findIndex((item) => item.id === id)].active =
-        !arr[arr.findIndex((item) => item.id === id)].active;
-      return arr;
-    });
+    if (id) {
+      const index = todos.findIndex((item) => item.id === id);
+      setTodos((prev) =>
+        prev.map((item, i) =>
+          i === index ? { ...item, active: !item.active } : item
+        )
+      );
+    }
   };
 
   const editTodoById = (id) => {
