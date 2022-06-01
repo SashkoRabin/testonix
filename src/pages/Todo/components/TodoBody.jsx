@@ -192,7 +192,7 @@ export default function TodoBody() {
     setIsDisabled((prev) => (prev = true));
   };
   const dragStart = (e, dragTodo) => {
-    setDragCurrentTodo((prev) => (prev = dragTodo));
+    setDragCurrentTodo(dragTodo);
   };
 
   const dragOver = (e) => {
