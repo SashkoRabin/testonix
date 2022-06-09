@@ -7,9 +7,11 @@ export default function CakesBodyView({ cakes }) {
     <>
       <h3 className={cl.cakes__title}>List of our cakes</h3>
       <div className={cl.cards__container}>
-        {cakes.map((item) => (
-          <CakeCard cake={item} key={item.id} />
-        ))}
+        {cakes.length ? (
+          cakes.map((item) => <CakeCard cake={item} key={item.id} />)
+        ) : (
+          <h3>No cakes here...</h3>
+        )}
       </div>
     </>
   );
