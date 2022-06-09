@@ -36,19 +36,22 @@
 .todo__item {
   border: 1px solid teal;
   position: relative;
-  display: flex;
+  display: block;
   padding: 10px;
   margin: 10px 0;
   transition: 0.2s;
+  width: 400px;
+  border-radius: 10px;
 }
 .todo__item p {
   margin: 0 10px;
 }
+.todo__item input[type='checkbox'] {
+  display: inline-block;
+}
 
 .todo__item.active {
   border: 2px solid red;
-  display: flex;
-  padding: 10px;
   margin: 10px 0;
   transition: 0.2s;
 }

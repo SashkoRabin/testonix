@@ -21,23 +21,43 @@
   margin: 5px;
 }
 
-.todo__form button {
-  padding: 7px;
+.save__btn {
+  padding: 10px;
   margin: 10px 20px;
+  outline: none;
+  cursor: pointer;
+  min-width: 70px;
+  border: none;
+  border-radius: 45px;
+}
+.create__btn {
+  padding: 10px;
+  margin: 10px 20px;
+  border-radius: 45px;
+  color: white;
+  background: #1b87bd;
+  outline: none;
+  cursor: pointer;
+  min-width: 70px;
+  border: none;
 }
 
 input[type='checkbox'] {
   width: 20px;
   height: 20px;
+  margin-right: 10px;
 }
 
 .todo__deleteButton {
-  margin: 0 30px;
-  padding: 0 5px;
-  background: red;
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 45px;
+  color: white;
+  background: rgb(204, 53, 53);
   outline: none;
-  border: 1px solid black;
   cursor: pointer;
+  border: none;
+  width: 70px;
 }
 .todo__deleteButton:hover {
   background: rgb(243, 137, 137);
@@ -54,6 +74,12 @@ input[type='checkbox'] {
 .todo__editButton {
   padding: 0 5px;
   cursor: pointer;
+  background: #1b87bd;
+  padding: 10px;
+  color: white;
+  width: 70px;
+  border-radius: 45px;
+  border: none;
 }
 
 .hotkey {
@@ -75,4 +101,16 @@ input[type='checkbox'] {
   outline: none;
   transition: all 0.3s;
   color: #fff;
+}
+
+.todo__user {
+  margin: 20px 10px;
+  display: block;
+}
+
+.todos__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -18,19 +18,18 @@ export default function TodoItemView(props) {
         value={props.todo.id}
         onChange={(e) => props.setTodoCompleted(+e.target.value)}
       />
-      <p>
+      <span>
         {props.todo.id}. {props.todo.title}
-      </p>
-      <br />
-      <h4>
+      </span>
+      <span className={cl.todo__user}>
         {props.todo.user.name} {props.todo.user.surname}
-      </h4>
+      </span>
       <button
         value={props.todo.id}
         onClick={(e) => props.deleteTodoById(+e.target.value)}
         className={cl.todo__deleteButton}
       >
-        x
+        Delete
       </button>
       <button
         value={props.todo.id}

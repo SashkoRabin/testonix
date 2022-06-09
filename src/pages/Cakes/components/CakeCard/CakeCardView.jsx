@@ -15,7 +15,7 @@ export default function CakeCardView({ cake }) {
         {cake.description ? cake.description : 'no description for this cake'}
       </p>
       <h4 className={cl.card__price}>
-        Price: {cake.price ? cake.price : 'no price yet...'}
+        {cake.price ? cake.price : 'no price yet...'}
       </h4>
       <button className={cl.card__buy_btn}>Buy &gt; </button>
     </div>

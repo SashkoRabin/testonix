@@ -29,8 +29,11 @@ export default function TodoBodyView(props) {
             text={'Enter your surname'}
           />
 
-          <button onClick={props.newTodo}>Create new todo</button>
+          <button className={cl.create__btn} onClick={props.newTodo}>
+            Create new todo
+          </button>
           <button
+            className={cl.save__btn}
             disabled={props.isDisabled}
             onClick={() => props.submitEditTodoById()}
           >
@@ -38,25 +41,27 @@ export default function TodoBodyView(props) {
           </button>
         </div>
       </div>
-      <SettingBar setSortIndex={props.setSortIndex} />
-      {props.todos.length ? (
-        props.todos.map((item) => (
-          <TodoItem
-            key={item.id}
-            todo={item}
-            setTodos={props.setTodos}
-            setTodoCompleted={props.setTodoCompleted}
-            deleteTodoById={props.deleteTodoById}
-            editTodoById={props.editTodoById}
-            setActiveTodo={props.setActiveTodo}
-            dragDrop={props.dragDrop}
-            dragStart={props.dragStart}
-            dragOver={props.dragOver}
-          />
-        ))
-      ) : (
-        <h3 className={cl.todo__nothing}>Список дел пуст...</h3>
-      )}
+      <div className={cl.todos__container}>
+        <SettingBar setSortIndex={props.setSortIndex} />
+        {props.todos.length ? (
+          props.todos.map((item) => (
+            <TodoItem
+              key={item.id}
+              todo={item}
+              setTodos={props.setTodos}
+              setTodoCompleted={props.setTodoCompleted}
+              deleteTodoById={props.deleteTodoById}
+              editTodoById={props.editTodoById}
+              setActiveTodo={props.setActiveTodo}
+              dragDrop={props.dragDrop}
+              dragStart={props.dragStart}
+              dragOver={props.dragOver}
+            />
+          ))
+        ) : (
+          <h3 className={cl.todo__nothing}>Список дел пуст...</h3>
+        )}
+      </div>
     </div>
   );
 }
