@@ -1,4 +1,5 @@
 import React from 'react';
+import ImgWithEvents from '../../../../../components/ImgWithEvents/ImgWithEvents';
 import cl from '../Wrapper.module.css';
 
 export default function Info() {
@@ -6,8 +7,8 @@ export default function Info() {
     <div className={cl.info}>
       <div className={cl.info_wrapper}>
         <div className={cl.info_left}>
-          <img
-            src="https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/59f9f99513af5894a5a8f11b/pexelsphoto907142.jpeg"
+          <ImgWithEvents
+            link="https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/59f9f99513af5894a5a8f11b/pexelsphoto907142.jpeg"
             alt="cake"
           />
           <p>
