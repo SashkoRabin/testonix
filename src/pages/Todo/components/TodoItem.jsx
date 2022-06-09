@@ -34,4 +34,7 @@ TodoItem.propTypes = {
   setTodoCompleted: PropTypes.func,
   deleteTodoById: PropTypes.func,
   editTodoById: PropTypes.func,
+  dragDrop: PropTypes.func,
+  dragOver: PropTypes.func,
+  dragStart: PropTypes.func,
 };

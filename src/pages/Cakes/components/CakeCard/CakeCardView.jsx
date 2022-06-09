@@ -1,5 +1,6 @@
 import React from 'react';
 import cl from '../../Cakes.module.css';
+import PropTypes from 'prop-types';
 
 export default function CakeCardView({ cake }) {
   return (
@@ -21,3 +22,7 @@ export default function CakeCardView({ cake }) {
     </div>
   );
 }
+
+CakeCardView.propTypes = {
+  cake: PropTypes.object,
+};

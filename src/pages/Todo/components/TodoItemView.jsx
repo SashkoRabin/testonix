@@ -1,5 +1,6 @@
 import React from 'react';
 import cl from '../Todo.module.css';
+import PropTypes from 'prop-types';
 
 export default function TodoItemView(props) {
   return (
@@ -42,3 +43,15 @@ export default function TodoItemView(props) {
     </div>
   );
 }
+
+TodoItemView.propTypes = {
+  wrapperClassName: PropTypes.string,
+  todo: PropTypes.object,
+  setTodoCompleted: PropTypes.func,
+  deleteTodoById: PropTypes.func,
+  editTodoById: PropTypes.func,
+  clickHandler: PropTypes.func,
+  dragDrop: PropTypes.func,
+  dragOver: PropTypes.func,
+  dragStart: PropTypes.func,
+};
