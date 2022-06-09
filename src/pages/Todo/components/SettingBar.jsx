@@ -10,7 +10,7 @@ export default function SettingBar({ setSortIndex }) {
   }, [sortValue, setSortIndex]);
 
   const changeSortIndex = (e) => {
-    setSortValue((prev) => (prev = +e.target.value));
+    setSortValue(+e.target.value);
   };
   return (
     <div>

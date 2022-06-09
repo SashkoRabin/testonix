@@ -13,14 +13,19 @@ export default class Timer extends Component {
   };
   componentDidMount = () => {
     this.timer = setInterval(() => {
-      this.setState((prev) => (prev.time.now = +new Date() / 1000));
-      this.setState((prev) => {
-        prev.time.seconds = Math.trunc(prev.time.now - prev.time.start);
-        prev.time.minutes = Math.trunc(prev.time.seconds / 60);
-        prev.time.hours = Math.trunc(prev.time.minutes / 60);
-        prev.time.seconds = prev.time.seconds % 60;
-        prev.time.minutes = prev.time.minutes % 60;
-      });
+      this.setState((prev) => ({
+        time: { ...prev.time, now: +new Date() / 1000 },
+      }));
+      const newTimeValue = {
+        now: this.state.time.now,
+        start: this.state.time.start,
+        seconds: Math.trunc(this.state.time.now - this.state.time.start),
+      };
+      newTimeValue.minutes = Math.trunc(newTimeValue.seconds / 60);
+      newTimeValue.hours = Math.trunc(newTimeValue.minutes / 60);
+      newTimeValue.seconds = newTimeValue.seconds % 60;
+      newTimeValue.minutes = newTimeValue.minutes % 60;
+      this.setState(() => ({ time: newTimeValue }));
     }, 1000);
   };
   componentWillUnmount = () => {
