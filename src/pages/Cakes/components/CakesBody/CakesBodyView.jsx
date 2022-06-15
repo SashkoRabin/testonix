@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CakeCard from '../CakeCard/CakeCard';
 import cl from '../../Cakes.module.css';
-import PropTypes from 'prop-types';
 
 export default function CakesBodyView({ cakes }) {
   return (
@@ -19,5 +19,5 @@ export default function CakesBodyView({ cakes }) {
 }
 
 CakesBodyView.propTypes = {
-  cakes: PropTypes.array,
+  cakes: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

@@ -1,6 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
-import cl from '../../Cakes.module.css';
 import PropTypes from 'prop-types';
+import cl from '../../Cakes.module.css';
 
 export default function CakeCardView({ cake }) {
   return (
@@ -18,11 +20,13 @@ export default function CakeCardView({ cake }) {
       <h4 className={cl.card__price}>
         {cake.price ? cake.price : 'no price yet...'}
       </h4>
-      <button className={cl.card__buy_btn}>Buy &gt; </button>
+      <button type="button" className={cl.card__buy_btn}>
+        Buy &gt;{' '}
+      </button>
     </div>
   );
 }
 
 CakeCardView.propTypes = {
-  cake: PropTypes.object,
+  cake: PropTypes.shape.isRequired,
 };

@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function ImgWithEvents({ link, alt }) {
   return (
@@ -10,3 +12,8 @@ export default function ImgWithEvents({ link, alt }) {
     />
   );
 }
+
+ImgWithEvents.propTypes = {
+  link: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+};

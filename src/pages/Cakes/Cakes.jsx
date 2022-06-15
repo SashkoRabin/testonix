@@ -13,6 +13,7 @@ class Cakes extends React.Component {
   }
 }
 
+// eslint-disable-next-line no-class-assign
 Cakes = withNavbar(Cakes);
 
 export default Cakes;

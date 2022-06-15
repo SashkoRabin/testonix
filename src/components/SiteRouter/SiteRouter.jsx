@@ -4,7 +4,7 @@ import Cakes from '../../pages/Cakes/Cakes';
 import Main from '../../pages/Main/Main';
 import Todo from '../../pages/Todo/Todo';
 
-const SiteRouter = () => {
+function SiteRouter() {
   return (
     <Routes>
       <Route path="/main" element={<Main />} />
@@ -13,6 +13,6 @@ const SiteRouter = () => {
       <Route path="*" element={<Main />} />
     </Routes>
   );
-};
+}
 
 export default SiteRouter;

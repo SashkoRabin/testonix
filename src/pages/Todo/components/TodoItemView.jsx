@@ -1,57 +1,74 @@
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import cl from '../Todo.module.css';
 import PropTypes from 'prop-types';
+import cl from '../Todo.module.css';
 
 export default function TodoItemView(props) {
+  const {
+    wrapperClassName,
+    dragStart,
+    todo,
+    dragOver,
+    dragDrop,
+    clickHandler,
+    setTodoCompleted,
+    deleteTodoById,
+    editTodoById,
+  } = props;
   return (
     <div
-      className={props.wrapperClassName || 'todo__item'}
+      role="note"
+      className={wrapperClassName || 'todo__item'}
       draggable="true"
-      onDragStart={(e) => props.dragStart(e, props.todo)}
-      onDragOver={props.dragOver}
-      onDrop={(e) => props.dragDrop(e, props.todo)}
-      onClick={props.clickHandler}
+      onDragStart={(e) => dragStart(e, todo)}
+      onDragOver={dragOver}
+      onDrop={(e) => dragDrop(e, todo)}
+      onClick={clickHandler}
     >
       <input
         type="checkbox"
         name="todoCompleted"
         id="todoCompleted"
-        value={props.todo.id}
-        onChange={(e) => props.setTodoCompleted(+e.target.value)}
+        value={todo.id}
+        onChange={(e) => setTodoCompleted(+e.target.value)}
       />
       <span>
-        {props.todo.id}. {props.todo.title}
+        {todo.id}. {todo.title}
       </span>
       <span className={cl.todo__user}>
-        {props.todo.user.name} {props.todo.user.surname}
+        {todo.user.name} {todo.user.surname}
       </span>
       <button
-        value={props.todo.id}
-        onClick={(e) => props.deleteTodoById(+e.target.value)}
+        type="button"
+        value={todo.id}
+        onClick={(e) => deleteTodoById(+e.target.value)}
         className={cl.todo__deleteButton}
       >
         Delete
       </button>
       <button
-        value={props.todo.id}
-        onClick={(e) => props.editTodoById(+e.target.value)}
+        type="button"
+        value={todo.id}
+        onClick={(e) => editTodoById(+e.target.value)}
         className={cl.todo__editButton}
       >
         Edit
       </button>
-      <span className={cl.hotkey}>{props.todo.hotkey}</span>
+      <span className={cl.hotkey}>{todo.hotkey}</span>
     </div>
   );
 }
 
 TodoItemView.propTypes = {
-  wrapperClassName: PropTypes.string,
-  todo: PropTypes.object,
-  setTodoCompleted: PropTypes.func,
-  deleteTodoById: PropTypes.func,
-  editTodoById: PropTypes.func,
-  clickHandler: PropTypes.func,
-  dragDrop: PropTypes.func,
-  dragOver: PropTypes.func,
-  dragStart: PropTypes.func,
+  wrapperClassName: PropTypes.string.isRequired,
+  todo: PropTypes.shape.isRequired,
+  setTodoCompleted: PropTypes.func.isRequired,
+  deleteTodoById: PropTypes.func.isRequired,
+  editTodoById: PropTypes.func.isRequired,
+  clickHandler: PropTypes.func.isRequired,
+  dragDrop: PropTypes.func.isRequired,
+  dragOver: PropTypes.func.isRequired,
+  dragStart: PropTypes.func.isRequired,
 };

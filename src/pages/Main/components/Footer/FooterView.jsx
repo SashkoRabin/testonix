@@ -1,8 +1,12 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class FooterView extends Component {
   render() {
+    const { originalDesignLooked } = this.props;
+    const { isOriginalDesignLooked } = this.props;
     return (
       <footer className="footer">
         <span className="footer__author_name">Меркулов Саша</span>
@@ -16,8 +20,9 @@ export default class FooterView extends Component {
           </a>
         </span>
         <span
-          onClick={this.props.originalDesignLooked}
+          onClick={originalDesignLooked}
           className="footer__design_link"
+          role="note"
         >
           <a
             target="_blank"
@@ -27,13 +32,13 @@ export default class FooterView extends Component {
             Original design...
           </a>
         </span>
-        {this.props.isOriginalDesignLooked && <span>Спасибо!!!</span>}
+        {isOriginalDesignLooked && <span>Спасибо!!!</span>}
       </footer>
     );
   }
 }
 
 FooterView.propTypes = {
-  isOriginalDesignLooked: PropTypes.bool,
-  originalDesignLooked: PropTypes.func,
+  isOriginalDesignLooked: PropTypes.bool.isRequired,
+  originalDesignLooked: PropTypes.func.isRequired,
 };

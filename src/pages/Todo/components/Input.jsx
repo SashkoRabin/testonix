@@ -1,7 +1,8 @@
 import React from 'react';
-import cl from '../Todo.module.css';
 import PropTypes from 'prop-types';
+import cl from '../Todo.module.css';
 
+// eslint-disable-next-line object-curly-newline
 export default function Input({ value, setValue, inputId, text }) {
   return (
     <div>
@@ -20,8 +21,8 @@ export default function Input({ value, setValue, inputId, text }) {
 }
 
 Input.propTypes = {
-  value: PropTypes.string,
-  inputId: PropTypes.string,
-  text: PropTypes.string,
-  setValue: PropTypes.func,
+  value: PropTypes.string.isRequired,
+  inputId: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
 };

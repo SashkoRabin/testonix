@@ -1,12 +1,13 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
-import cl from '../Todo.module.css';
 import PropTypes from 'prop-types';
+import cl from '../Todo.module.css';
 
 export default function SettingBar({ setSortIndex }) {
   const [sortValue, setSortValue] = useState(1);
 
   useEffect(() => {
-    setSortIndex((prev) => (prev = sortValue));
+    setSortIndex(sortValue);
   }, [sortValue, setSortIndex]);
 
   const changeSortIndex = (e) => {
@@ -34,5 +35,5 @@ export default function SettingBar({ setSortIndex }) {
 }
 
 SettingBar.propTypes = {
-  setSortIndex: PropTypes.func,
+  setSortIndex: PropTypes.func.isRequired,
 };

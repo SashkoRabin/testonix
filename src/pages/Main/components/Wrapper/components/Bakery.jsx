@@ -16,9 +16,9 @@ export default function Bakery() {
             fugit vero.
           </p>
         </div>
-        <div className={cl.bakery_line}></div>
+        <div className={cl.bakery_line} />
         <div className={cl.about_bakery}>
-          <div className={cl.ab_left}></div>
+          <div className={cl.ab_left} />
           <div className={cl.ab_right}>
             <p>
               Our bakery and store-front hours are Monday-Friday 8:30-6:00pm and
@@ -29,7 +29,7 @@ export default function Bakery() {
               for everyone. This is a one of a kind bakery, where the aroma of
               home-style baking weakens even the strongest will.
             </p>
-            <div className={cl.ab_right_img}></div>
+            <div className={cl.ab_right_img} />
           </div>
         </div>
       </div>

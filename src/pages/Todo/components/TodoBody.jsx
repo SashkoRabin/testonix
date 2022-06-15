@@ -1,3 +1,8 @@
+/* eslint-disable indent */
+/* eslint-disable no-nested-ternary */
+/* eslint-disable function-paren-newline */
+/* eslint-disable no-confusing-arrow */
+/* eslint-disable implicit-arrow-linebreak */
 import React, { useState, useEffect } from 'react';
 import TodoBodyView from './TodoBodyView';
 
@@ -39,28 +44,13 @@ export default function TodoBody() {
       order: '3',
     },
   ]);
-  const keypressHanlder = (e) => {
-    if (e.path.join('').search('HTMLInputElement') < 0) {
-      todos.forEach((item) => item.hotkey === e.key && setActiveTodo(item.id));
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('keypress', keypressHanlder);
-    return () => {
-      document.removeEventListener('keypress', keypressHanlder);
-    };
-  });
-  useEffect(() => {
-    sortingFunc(sortIndex);
-  }, [sortIndex]);
 
   const createTodo = (obj) => {
     // добавление в массив
     setTodos((prev) => [...prev, obj]);
   };
   const newTodo = () => {
-    //добавление в массив
+    // добавление в массив
     if (titleValue && nameValue && surnameValue) {
       const todo = {
         id: todos.length ? todos[todos.length - 1].id + 1 : 1,
@@ -89,21 +79,21 @@ export default function TodoBody() {
   };
 
   const deleteTodoById = (id) => {
-    //удаление из массива
+    // удаление из массива
     if (id) {
       setTodos((prev) => prev.filter((item) => item.id !== id));
     }
   };
 
-  const sortingFunc = (sortIndex) => {
+  function sortingFunc(sortingIndex) {
     // сортировка
-    if (sortIndex) {
-      if (sortIndex === 1) {
+    if (sortingIndex) {
+      if (sortingIndex === 1) {
         setTodos((prev) => {
           const arr = [...prev];
-          for (let i = 0; i < arr.length - 1; i++) {
+          for (let i = 0; i < arr.length - 1; i += 1) {
             if (arr[i].id > arr[i + 1].id) {
-              let temp = arr[i];
+              const temp = arr[i];
               arr[i] = arr[i + 1];
               arr[i + 1] = temp;
             }
@@ -111,7 +101,7 @@ export default function TodoBody() {
           return arr;
         });
       }
-      if (sortIndex === 2) {
+      if (sortingIndex === 2) {
         setTodos((prev) =>
           [...prev].sort((a, b) => {
             return a.title.toLowerCase() < b.title.toLowerCase()
@@ -122,7 +112,7 @@ export default function TodoBody() {
           })
         );
       }
-      if (sortIndex === 3) {
+      if (sortingIndex === 3) {
         setTodos((prev) =>
           [...prev].sort((a, b) => {
             if (a.user.name.toLowerCase() < b.user.name.toLowerCase()) {
@@ -135,7 +125,7 @@ export default function TodoBody() {
           })
         );
       }
-      if (sortIndex === 4) {
+      if (sortingIndex === 4) {
         setTodos((prev) =>
           [...prev].sort((a, b) => {
             if (a.order > b.order) return 1;
@@ -145,7 +135,11 @@ export default function TodoBody() {
         );
       }
     }
-  };
+  }
+
+  useEffect(() => {
+    sortingFunc(sortIndex);
+  }, [sortIndex]);
 
   const setActiveTodo = (id) => {
     if (id) {
@@ -157,7 +151,17 @@ export default function TodoBody() {
       );
     }
   };
-
+  const keypressHanlder = (e) => {
+    if (e.path.join('').search('HTMLInputElement') < 0) {
+      todos.forEach((item) => item.hotkey === e.key && setActiveTodo(item.id));
+    }
+  };
+  useEffect(() => {
+    document.addEventListener('keypress', keypressHanlder);
+    return () => {
+      document.removeEventListener('keypress', keypressHanlder);
+    };
+  });
   const editTodoById = (id) => {
     if (id) {
       const my = todos.find((item) => item.id === id);
@@ -165,7 +169,7 @@ export default function TodoBody() {
       setNameValue(arr[my.id - 1].user.name);
       setSurnameValue(arr[my.id - 1].user.surname);
       setTitleValue(arr[my.id - 1].title);
-      setIsDisabled((prev) => (prev = false));
+      setIsDisabled(false);
       setCurrentTodo({
         id,
         title: arr[my.id - 1].title,
@@ -189,7 +193,7 @@ export default function TodoBody() {
     setNameValue('');
     setSurnameValue('');
     setTitleValue('');
-    setIsDisabled((prev) => (prev = true));
+    setIsDisabled(true);
   };
   const dragStart = (e, dragTodo) => {
     setDragCurrentTodo(dragTodo);

@@ -1,61 +1,79 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cl from '../Todo.module.css';
 import SettingBar from './SettingBar';
 import Input from './Input';
 import TodoItem from './TodoItem';
-import PropTypes from 'prop-types';
 
 export default function TodoBodyView(props) {
+  const { titleValue, setTitleValue } = props;
+  const { nameValue, setNameValue } = props;
+  const { surnameValue, setSurnameValue } = props;
+  const { todos, newTodo, submitEditTodoById } = props;
+  const { isDisabled } = props;
+  const {
+    setSortIndex,
+    setTodos,
+    setTodoCompleted,
+    deleteTodoById,
+    editTodoById,
+    setActiveTodo,
+    dragDrop,
+    dragStart,
+    dragOver,
+  } = props;
+
   return (
     <div className={cl.todo__body}>
       <div className={cl.todo__formWrapper}>
         <div className={cl.todo__form}>
           <Input
-            value={props.titleValue}
+            value={titleValue}
             inputId="todo__title"
-            setValue={props.setTitleValue}
-            text={'Enter Todo Title'}
+            setValue={setTitleValue}
+            text="Enter Todo Title"
           />
           <Input
-            value={props.nameValue}
+            value={nameValue}
             inputId="todo__name"
-            setValue={props.setNameValue}
-            text={'Enter your name'}
+            setValue={setNameValue}
+            text="Enter your name"
           />
           <Input
-            value={props.surnameValue}
+            value={surnameValue}
             inputId="todo__surname"
-            setValue={props.setSurnameValue}
-            text={'Enter your surname'}
+            setValue={setSurnameValue}
+            text="Enter your surname"
           />
 
-          <button className={cl.create__btn} onClick={props.newTodo}>
+          <button type="button" className={cl.create__btn} onClick={newTodo}>
             Create new todo
           </button>
           <button
+            type="button"
             className={cl.save__btn}
-            disabled={props.isDisabled}
-            onClick={() => props.submitEditTodoById()}
+            disabled={isDisabled}
+            onClick={() => submitEditTodoById()}
           >
             Save
           </button>
         </div>
       </div>
       <div className={cl.todos__container}>
-        <SettingBar setSortIndex={props.setSortIndex} />
-        {props.todos.length ? (
-          props.todos.map((item) => (
+        <SettingBar setSortIndex={setSortIndex} />
+        {todos.length ? (
+          todos.map((item) => (
             <TodoItem
               key={item.id}
               todo={item}
-              setTodos={props.setTodos}
-              setTodoCompleted={props.setTodoCompleted}
-              deleteTodoById={props.deleteTodoById}
-              editTodoById={props.editTodoById}
-              setActiveTodo={props.setActiveTodo}
-              dragDrop={props.dragDrop}
-              dragStart={props.dragStart}
-              dragOver={props.dragOver}
+              setTodos={setTodos}
+              setTodoCompleted={setTodoCompleted}
+              deleteTodoById={deleteTodoById}
+              editTodoById={editTodoById}
+              setActiveTodo={setActiveTodo}
+              dragDrop={dragDrop}
+              dragStart={dragStart}
+              dragOver={dragOver}
             />
           ))
         ) : (
@@ -67,18 +85,23 @@ export default function TodoBodyView(props) {
 }
 
 TodoBodyView.propTypes = {
-  isDisabled: PropTypes.bool,
-  titleValue: PropTypes.string,
-  nameValue: PropTypes.string,
-  surnameValue: PropTypes.string,
-  todos: PropTypes.array,
-  setTitleValue: PropTypes.func,
-  setNameValue: PropTypes.func,
-  setSurnameValue: PropTypes.func,
-  newTodo: PropTypes.func,
-  submitEditTodoById: PropTypes.func,
-  setSortIndex: PropTypes.func,
-  setTodoCompleted: PropTypes.func,
-  deleteTodoById: PropTypes.func,
-  editTodoById: PropTypes.func,
+  isDisabled: PropTypes.bool.isRequired,
+  titleValue: PropTypes.string.isRequired,
+  nameValue: PropTypes.string.isRequired,
+  surnameValue: PropTypes.string.isRequired,
+  todos: PropTypes.arrayOf(PropTypes.any).isRequired,
+  setTitleValue: PropTypes.func.isRequired,
+  setNameValue: PropTypes.func.isRequired,
+  setSurnameValue: PropTypes.func.isRequired,
+  newTodo: PropTypes.func.isRequired,
+  submitEditTodoById: PropTypes.func.isRequired,
+  setSortIndex: PropTypes.func.isRequired,
+  setActiveTodo: PropTypes.func.isRequired,
+  setTodoCompleted: PropTypes.func.isRequired,
+  deleteTodoById: PropTypes.func.isRequired,
+  editTodoById: PropTypes.func.isRequired,
+  setTodos: PropTypes.func.isRequired,
+  dragDrop: PropTypes.func.isRequired,
+  dragStart: PropTypes.func.isRequired,
+  dragOver: PropTypes.func.isRequired,
 };

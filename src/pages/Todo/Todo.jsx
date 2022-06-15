@@ -1,14 +1,11 @@
+/* eslint-disable no-class-assign */
 import React from 'react';
 import withNavbar from '../../components/HOC/withNavbar/withNavbar';
 import TodoBody from './components/TodoBody';
 
 class Todo extends React.Component {
   render() {
-    return (
-      <>
-        <TodoBody />
-      </>
-    );
+    return <TodoBody />;
   }
 }
 

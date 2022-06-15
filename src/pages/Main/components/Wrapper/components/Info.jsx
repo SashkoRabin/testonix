@@ -8,7 +8,8 @@ export default function Info() {
       <div className={cl.info_wrapper}>
         <div className={cl.info_left}>
           <ImgWithEvents
-            link="https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/59f9f99513af5894a5a8f11b/pexelsphoto907142.jpeg"
+            link="
+            https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/59f9f99513af5894a5a8f11b/pexelsphoto907142.jpeg"
             alt="cake"
           />
           <p>
@@ -26,10 +27,11 @@ export default function Info() {
             in the wee hours of the morning mixing, kneading, and making each
             loaf by hand.
           </p>
-          <div className={cl.info_line}></div>
+          <div className={cl.info_line} />
 
           <img
-            src="https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/d2057c146d09515b941c9ea9/pexelsphoto1028711.jpeg"
+            src="
+            https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/d2057c146d09515b941c9ea9/pexelsphoto1028711.jpeg"
             alt="cake"
           />
         </div>

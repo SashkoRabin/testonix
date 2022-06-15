@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import CakesBodyView from './CakesBodyView';
 import axios from 'axios';
+import CakesBodyView from './CakesBodyView';
 import Loader from '../../../../components/Loader/Loader';
 
 export default function CakesBody() {
@@ -18,5 +18,5 @@ export default function CakesBody() {
   useEffect(() => {
     getCakes();
   }, []);
-  return <>{isLoading ? <Loader /> : <CakesBodyView cakes={cakes} />}</>;
+  return <div>{isLoading ? <Loader /> : <CakesBodyView cakes={cakes} />}</div>;
 }

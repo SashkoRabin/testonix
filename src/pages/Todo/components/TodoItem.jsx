@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable eqeqeq */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -5,36 +6,44 @@ import TodoItemView from './TodoItemView';
 
 export default function TodoItem(props) {
   const [wrapperClassName, setWrapperClassName] = useState('todo__item');
+  const {
+    todo,
+    setActiveTodo,
+    setTodoCompleted,
+    deleteTodoById,
+    editTodoById,
+  } = props;
+  const { dragDrop, dragOver, dragStart } = props;
   const clickHandler = async () => {
-    await props.setActiveTodo(props.todo.id);
+    await setActiveTodo(todo.id);
   };
   useEffect(() => {
-    props.todo.active
-      ? setWrapperClassName('todo__item active')
-      : setWrapperClassName('todo__item');
-  }, [props.todo.active]);
+    if (todo.active) setWrapperClassName('todo__item active');
+    else setWrapperClassName('todo__item');
+  }, [todo.active]);
 
   return (
     <TodoItemView
-      todo={props.todo}
-      setTodoCompleted={props.setTodoCompleted}
-      deleteTodoById={props.deleteTodoById}
-      editTodoById={props.editTodoById}
+      todo={todo}
+      setTodoCompleted={setTodoCompleted}
+      deleteTodoById={deleteTodoById}
+      editTodoById={editTodoById}
       wrapperClassName={wrapperClassName}
       clickHandler={clickHandler}
-      dragDrop={props.dragDrop}
-      dragOver={props.dragOver}
-      dragStart={props.dragStart}
+      dragDrop={dragDrop}
+      dragOver={dragOver}
+      dragStart={dragStart}
     />
   );
 }
 
 TodoItem.propTypes = {
-  todo: PropTypes.object,
-  setTodoCompleted: PropTypes.func,
-  deleteTodoById: PropTypes.func,
-  editTodoById: PropTypes.func,
-  dragDrop: PropTypes.func,
-  dragOver: PropTypes.func,
-  dragStart: PropTypes.func,
+  todo: PropTypes.shape.isRequired,
+  setTodoCompleted: PropTypes.func.isRequired,
+  deleteTodoById: PropTypes.func.isRequired,
+  editTodoById: PropTypes.func.isRequired,
+  dragDrop: PropTypes.func.isRequired,
+  dragOver: PropTypes.func.isRequired,
+  setActiveTodo: PropTypes.func.isRequired,
+  dragStart: PropTypes.func.isRequired,
 };

@@ -14,9 +14,10 @@ class Footer extends React.Component {
   };
 
   render() {
+    const { isOriginalDesignLooked } = this.state;
     return (
       <FooterView
-        isOriginalDesignLooked={this.state.isOriginalDesignLooked}
+        isOriginalDesignLooked={isOriginalDesignLooked}
         originalDesignLooked={this.originalDesignLooked}
       />
     );
