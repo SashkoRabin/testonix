@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/testonix/static/css/main.bd2d1597.css",
-    "main.js": "/testonix/static/js/main.87a7374d.js",
+    "main.css": "/testonix/static/css/main.11eba2de.css",
+    "main.js": "/testonix/static/js/main.650f8d58.js",
     "index.html": "/testonix/index.html",
-    "main.bd2d1597.css.map": "/testonix/static/css/main.bd2d1597.css.map",
-    "main.87a7374d.js.map": "/testonix/static/js/main.87a7374d.js.map"
+    "main.11eba2de.css.map": "/testonix/static/css/main.11eba2de.css.map",
+    "main.650f8d58.js.map": "/testonix/static/js/main.650f8d58.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd2d1597.css",
-    "static/js/main.87a7374d.js"
+    "static/css/main.11eba2de.css",
+    "static/js/main.650f8d58.js"
   ]
 }

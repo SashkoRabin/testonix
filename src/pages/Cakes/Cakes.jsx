@@ -1,13 +1,18 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
 import CakesBody from './components/CakesBody/CakesBody';
 import cl from './Cakes.module.css';
+import withNavbar from '../../components/HOC/withNavbar/withNavbar';
 
-export default function Cakes() {
-  return (
-    <div className={cl.cakes__container}>
-      <Navbar />
-      <CakesBody />
-    </div>
-  );
+class Cakes extends React.Component {
+  render() {
+    return (
+      <div className={cl.cakes__container}>
+        <CakesBody />
+      </div>
+    );
+  }
 }
+
+Cakes = withNavbar(Cakes);
+
+export default Cakes;
