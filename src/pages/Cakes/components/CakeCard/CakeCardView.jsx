@@ -2,25 +2,24 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import PropTypes from 'prop-types';
-import cl from '../../Cakes.module.css';
 
 export default function CakeCardView({ cake }) {
   return (
-    <div className={cl.card__container}>
-      <span className={cl.card__item}>
+    <div className="card__container">
+      <span className="card__item">
         "
         <strong>
           {cake.name ? cake.name.substring(0, 30) : 'no cake name'}
         </strong>
         "
       </span>
-      <p className={cl.card__item}>
+      <p className="card__item">
         {cake.description ? cake.description : 'no description for this cake'}
       </p>
-      <h4 className={cl.card__price}>
+      <h4 className="card__price">
         {cake.price ? cake.price : 'no price yet...'}
       </h4>
-      <button type="button" className={cl.card__buy_btn}>
+      <button type="button" className="card__buy_btn">
         Buy &gt;{' '}
       </button>
     </div>

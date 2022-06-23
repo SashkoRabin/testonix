@@ -1,19 +1,19 @@
-import React from 'react';
+/* eslint-disable no-func-assign */
+import React, { useContext } from 'react';
 import CakesBody from './components/CakesBody/CakesBody';
-import cl from './Cakes.module.css';
 import withNavbar from '../../components/HOC/withNavbar/withNavbar';
+import { MyThemeContext } from '../../contexts/MyThemeContext';
 
-class Cakes extends React.Component {
-  render() {
-    return (
-      <div className={cl.cakes__container}>
-        <CakesBody />
-      </div>
-    );
-  }
+function Cakes() {
+  const { theme, themeToggler, mountedComponent } = useContext(MyThemeContext);
+  if (!mountedComponent) return <div />;
+  return (
+    <div className="cakes__container">
+      <CakesBody theme={theme} themeToggler={themeToggler} />
+    </div>
+  );
 }
 
-// eslint-disable-next-line no-class-assign
 Cakes = withNavbar(Cakes);
 
 export default Cakes;

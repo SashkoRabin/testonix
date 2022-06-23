@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import CakesBodyView from './CakesBodyView';
 import Loader from '../../../../components/Loader/Loader';
 
-export default function CakesBody() {
+export default function CakesBody({ theme, themeToggler }) {
   const [cakes, setCakes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -18,5 +19,22 @@ export default function CakesBody() {
   useEffect(() => {
     getCakes();
   }, []);
-  return <div>{isLoading ? <Loader /> : <CakesBodyView cakes={cakes} />}</div>;
+  return (
+    <div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <CakesBodyView
+          cakes={cakes}
+          theme={theme}
+          themeToggler={themeToggler}
+        />
+      )}
+    </div>
+  );
 }
+
+CakesBody.propTypes = {
+  theme: PropTypes.string.isRequired,
+  themeToggler: PropTypes.func.isRequired,
+};
