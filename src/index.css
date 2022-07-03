@@ -111,4 +111,16 @@
   .footer a:hover {
     color: #797676;
   }
+  .theme_toggler {
+    position: static;
+    float: left;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 24px;
+    background: #fac6db;
+    padding: 18px 32px;
+  }
 }
