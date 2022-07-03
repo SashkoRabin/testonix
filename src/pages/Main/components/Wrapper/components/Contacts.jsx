@@ -1,39 +1,43 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import cl from '../Wrapper.module.css';
 
 export default function Contacts() {
+  const { t } = useTranslation();
   return (
     <div className={cl.contacts}>
       <div className={cl.contacts_img1} />
       <div className={cl.contacts_text}>
-        <h2>Our Contacts</h2>
+        <h2>{t('our_contacts')}</h2>
         <p className={cl.contacts_me}>
-          mok Street
+          {t('street')}
           <br />
-          Big city, 28001
+          {t('big_city')}
+          , 28001
           <br />
           sashrabin@gmail.com
           <br />
           +380(95)-163-2772
         </p>
         <p className={cl.contacts_timetable}>
-          Tuesday 6:30AM – 6:00PM
+          {t('tuesday')} 6:30AM – 6:00PM
           <br />
-          Wednesday 6:30AM – 6:00PM
+          {t('wednesday')} 6:30AM – 6:00PM
           <br />
-          Thursday 6:30AM – 6:00PM
+          {t('thursday')} 6:30AM – 6:00PM
           <br />
-          Friday 6:30AM – 6:00PM
+          {t('friday')} 6:30AM – 6:00PM
           <br />
-          Saturday 6:30AM – 2:00PM
+          {t('saturday')} 6:30AM – 2:00PM
           <br />
-          Sunday 8:00AM - 12:00PM
+          {t('sunday')} 8:00AM - 12:00PM
           <br />
-          Monday CLOSED
+          {t('monday')} {t('closed')}
         </p>
         <div className={cl.contacts_line} />
         <a href="*" className={cl.contacts_contact}>
-          contact us
+          {t('contact_us')}
         </a>
       </div>
       <div className={cl.contacts_img2} />

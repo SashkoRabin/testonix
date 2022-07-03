@@ -10,6 +10,20 @@
   color: rgb(136, 136, 136);
 }
 
+.navbar__lang {
+  display: inline !important;
+  position: absolute;
+  right: 40px;
+  cursor: pointer;
+}
+
+.navbar__langItem {
+  margin: 0 0 0 10px;
+}
+.navbar__langItem:hover {
+  text-decoration: underline;
+}
+
 .navbar {
   display: flex;
   justify-content: center;
