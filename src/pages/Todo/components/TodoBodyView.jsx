@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import cl from '../Todo.module.css';
 import SettingBar from './SettingBar';
 import Input from './Input';
 import TodoItem from './TodoItem';
 
 export default function TodoBodyView(props) {
+  const { t } = useTranslation();
   const { titleValue, setTitleValue } = props;
   const { nameValue, setNameValue } = props;
   const { surnameValue, setSurnameValue } = props;
@@ -31,23 +33,27 @@ export default function TodoBodyView(props) {
             value={titleValue}
             inputId="todo__title"
             setValue={setTitleValue}
-            text="Enter Todo Title"
+            text={t('enter_todo_title')}
           />
           <Input
             value={nameValue}
             inputId="todo__name"
             setValue={setNameValue}
-            text="Enter your name"
+            text={t('enter_your_name')}
           />
           <Input
             value={surnameValue}
             inputId="todo__surname"
             setValue={setSurnameValue}
-            text="Enter your surname"
+            text={t('enter_your_surname')}
           />
 
-          <button type="button" className={cl.create__btn} onClick={newTodo}>
-            Create new todo
+          <button
+            type="button"
+            className={cl.create__btn}
+            onClick={newTodo}
+          >
+            {t('create_new_todo')}
           </button>
           <button
             type="button"
@@ -55,7 +61,7 @@ export default function TodoBodyView(props) {
             disabled={isDisabled}
             onClick={() => submitEditTodoById()}
           >
-            Save
+            {t('save')}
           </button>
         </div>
       </div>
@@ -77,7 +83,7 @@ export default function TodoBodyView(props) {
             />
           ))
         ) : (
-          <h3 className={cl.todo__nothing}>Список дел пуст...</h3>
+          <h3 className={cl.todo__nothing}>{t('todo_list_empty')}</h3>
         )}
       </div>
     </div>

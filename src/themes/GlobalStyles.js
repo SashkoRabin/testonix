@@ -10,6 +10,10 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     transition: 0.2s;
   }
+  .cakes__body {
+    border-top: 1px solid #114f5a;
+    padding: 20px 0 0;
+  }
   
   .card__container {
     border: 1px solid #114f5a;
@@ -47,7 +51,6 @@ export const GlobalStyles = createGlobalStyle`
   
   .cakes__title {
     text-align: center;
-    border-top: 1px solid #114f5a;
     padding: 40px 0;
     color: ${(props) => props.theme.cakes_titlecolor};
   }
