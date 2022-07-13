@@ -40,6 +40,7 @@ export default class Timer extends Component {
 
   render() {
     const { time } = this.state;
+
     return <TimerView time={time} />;
   }
 }

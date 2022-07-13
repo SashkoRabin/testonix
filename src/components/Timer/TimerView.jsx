@@ -14,5 +14,11 @@ export default function TimerView({ time }) {
 }
 
 TimerView.propTypes = {
-  time: PropTypes.shape.isRequired,
+  time: PropTypes.shape({
+    hours: PropTypes.number.isRequired,
+    minutes: PropTypes.number.isRequired,
+    seconds: PropTypes.number.isRequired,
+    now: PropTypes.number.isRequired,
+    start: PropTypes.number.isRequired,
+  }).isRequired,
 };
