@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import CakesBodyView from './CakesBodyView';
 import Loader from '../../../../components/Loader/Loader';
-import { UPDATE_CAKES } from '../../../../store/cake/types';
+import { updateCakes } from '../../../../store/cake/actions';
 
 export default function CakesBody({ theme, themeToggler }) {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export default function CakesBody({ theme, themeToggler }) {
     const response = await axios.get(
       'https://buy-cakes.herokuapp.com/api/cakes'
     );
-    dispatch({ type: UPDATE_CAKES, payload: response.data });
+    dispatch(updateCakes(response.data));
     setIsLoading(false);
   };
 
