@@ -153,7 +153,9 @@ export default function TodoBody() {
   };
   const keypressHanlder = (e) => {
     if (e.path.join('').search('HTMLInputElement') < 0) {
-      todos.forEach((item) => item.hotkey === e.key && setActiveTodo(item.id));
+      todos.forEach(
+        (item) => item.hotkey === e.key && setActiveTodo(item.id)
+      );
     }
   };
   useEffect(() => {
@@ -184,7 +186,7 @@ export default function TodoBody() {
   const submitEditTodoById = () => {
     setTodos((prev) => {
       const ind = currentTodo.id - 1;
-      const arr = prev.map((item) => ({ ...item }));
+      const arr = prev.map((item) => ({ ...item, ...item.user }));
       arr[ind].title = titleValue;
       arr[ind].user.name = nameValue;
       arr[ind].user.surname = surnameValue;

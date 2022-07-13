@@ -1,5 +1,3 @@
-/* eslint-disable object-curly-newline */
-/* eslint-disable eqeqeq */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TodoItemView from './TodoItemView';
@@ -38,7 +36,18 @@ export default function TodoItem(props) {
 }
 
 TodoItem.propTypes = {
-  todo: PropTypes.shape.isRequired,
+  todo: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    hotkey: PropTypes.string.isRequired,
+    order: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    active: PropTypes.bool.isRequired,
+    completed: PropTypes.bool.isRequired,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      surname: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
   setTodoCompleted: PropTypes.func.isRequired,
   deleteTodoById: PropTypes.func.isRequired,
   editTodoById: PropTypes.func.isRequired,
