@@ -186,14 +186,20 @@ export default function TodoBody() {
   const submitEditTodoById = () => {
     setTodos((prev) => {
       const ind = currentTodo.id - 1;
-      const arr = prev.map((item) => ({
-        ...item,
-        title: titleValue,
-        user: { ...item.user },
-      }));
-      arr[ind].title = titleValue;
-      arr[ind].user.name = nameValue;
-      arr[ind].user.surname = surnameValue;
+      const arr = prev.map((item, index) =>
+        index === ind
+          ? {
+              ...item,
+              title: titleValue,
+              user: {
+                ...item.user,
+                name: nameValue,
+                surname: surnameValue,
+              },
+            }
+          : item
+      );
+
       return [...arr];
     });
     setNameValue('');
