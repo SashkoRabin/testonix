@@ -7,7 +7,6 @@ import cl from '../Todo.module.css';
 
 export default function TodoItemView(props) {
   const {
-    wrapperClassName,
     dragStart,
     todo,
     dragOver,
@@ -20,7 +19,7 @@ export default function TodoItemView(props) {
   return (
     <div
       role="note"
-      className={wrapperClassName || 'todo__item'}
+      className={todo.active ? 'todo__item active' : 'todo__item'}
       draggable="true"
       onDragStart={(e) => dragStart(e, todo)}
       onDragOver={dragOver}
@@ -62,7 +61,6 @@ export default function TodoItemView(props) {
 }
 
 TodoItemView.propTypes = {
-  wrapperClassName: PropTypes.string.isRequired,
   todo: PropTypes.shape({
     id: PropTypes.number.isRequired,
     hotkey: PropTypes.string.isRequired,
