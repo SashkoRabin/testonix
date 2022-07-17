@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import CakesBodyView from './CakesBodyView';
 import Loader from '../../../../components/Loader/Loader';
-import { updateCakes } from '../../../../store/cake/actions';
+import { fetchCakes } from '../../../../store/cake/actions';
 
 export default function CakesBody({ theme, themeToggler }) {
   const dispatch = useDispatch();
@@ -13,10 +12,7 @@ export default function CakesBody({ theme, themeToggler }) {
 
   const getCakes = async () => {
     setIsLoading(true);
-    const response = await axios.get(
-      'https://buy-cakes.herokuapp.com/api/cakes'
-    );
-    dispatch(updateCakes(response.data));
+    dispatch(fetchCakes());
     setIsLoading(false);
   };
 
